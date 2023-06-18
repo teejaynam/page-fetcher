@@ -32,7 +32,8 @@ const downloadURL = function() {
     if (response.statusCode === 200) {
       console.log("Successfully downloaded");
     } else if (response.statusCode >= 400 && response.statusCode <= 599) {
-      console.log('Error! :', error);
+      console.log('Error! Exiting program :', error);
+      process.exit();
     }
 
     fs.writeFile(FILE, body, err => {
